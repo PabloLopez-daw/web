@@ -140,9 +140,9 @@ header {
         min-width: 300px;
 
         img {
-            max-width: 100%;
+            max-width: 150%;
             height: auto;
-            height: 90vh;
+            height: 120vh;
             object-fit: contain;
         }
     }
@@ -165,143 +165,6 @@ header {
     }
 }
 
-@media (max-width: 1024px) {
-    header {
-        padding: 1rem;
-
-        nav {
-            ul {
-                gap: 1.5rem;
-
-                li {
-                    a {
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
-    }
-
-    .hero-content {
-        padding: 1.5rem;
-        flex-direction: column;
-        .morad {
-            padding: 1.5rem;
-        }
-
-        .photo {
-            padding: 0rem;
-            height: 50vh;
-        }
-        .icons {
-            
-            flex-direction: row;
-        }
-    }
-}
-
-
-@media (max-width: 768px) {
-    header {
-        .hamburger {
-            display: flex;
-        }
-
-        nav {
-            display: none;
-        }
-
-
-    }
-
-    .hero-content {
-        flex-direction: column;
-        padding: 1rem;
-        min-height: auto;
-
-        .morad {
-            order: 1;
-            padding: 1rem;
-            width: 100%;
-
-            h1 {
-                font-size: clamp(2.5rem, 12vw, 4rem);
-            }
-
-            p {
-                font-size: clamp(0.9rem, 3vw, 1.2rem);
-            }
-        }
-
-        .photo {
-            order: 2;
-            padding: 1rem;
-            width: 100%;
-
-            img {
-                max-height: 50vh;
-            }
-        }
-
-        .icons {
-            order: 3;
-            flex-direction: row;
-            width: 100%;
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 1.5rem;
-
-            svg {
-                height: 35px;
-                width: 35px;
-            }
-        }
-    }
-}
-
-
-@media (max-width: 480px) {
-    header {
-        height: 70px;
-
-        .hamburger {
-            left: 1rem;
-        }
-
-        nav {
-            top: 70px;
-            height: calc(100vh - 70px);
-        }
-    }
-
-    .hero-content {
-        min-height: calc(100vh - 70px);
-
-        .morad {
-            h1 {
-                font-size: clamp(1.8rem, 15vw, 2.7rem);
-            }
-
-            p {
-                font-size: clamp(0.8rem, 4vw, 1rem);
-            }
-        }
-
-        .photo {
-            img {
-                max-height: 40vh;
-            }
-        }
-
-        .icons {
-            svg {
-                height: 30px;
-                width: 30px;
-            }
-        }
-    }
-}
-
 .bio-content {
     padding-top: 3rem;
     padding-bottom: 5rem;
@@ -309,39 +172,48 @@ header {
     .bio1 {
         color: var(--azul);
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
 
         .content1 {
-            width: 52%;
-            padding-top: 1rem;
+            flex: 1 1 500px;
+            min-width: 300px;
+            padding: 1rem 2rem;
 
             h2 {
-                padding-left: 3rem;
-                font-size: 64px;
+                padding-left: 2rem;
+                font-size: clamp(2.5rem, 5vw, 4rem);
             }
 
             h3 {
-                padding: 4rem 4rem 2rem 4rem;
-                font-size: 36px;
+                padding: 3rem 3rem 1.5rem 3rem;
+                font-size: clamp(1.5rem, 3vw, 2.25rem);
                 font-style: italic;
                 font-weight: 400;
             }
 
             p {
-                padding: 1rem 11rem 0rem 4rem;
+                padding: 1rem 3rem;
                 margin-bottom: 1rem;
-                font-size: 24px;
+                font-size: clamp(1rem, 2vw, 1.5rem);
             }
         }
 
         .content2 {
-            width: 48%;
-
-            padding-top: 1rem;
-            margin-left: 2rem;
+            flex: 1 1 450px;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: #080819;
 
             img {
-                height: 875px;
-                width: 900px;
+                width: 100%;
+                height: auto;
+                max-width: 700px;
+                object-fit: cover;
+                border-radius: 8px;
             }
         }
     }
@@ -350,39 +222,45 @@ header {
         margin-top: 6rem;
         color: var(--white);
         display: flex;
-
+        flex-wrap: wrap;
+        align-items: center;
 
         .content3 {
-            width: 48px;
+            flex: 1 1 450px;
+            min-width: 300px;
             background-color: #080819;
-            width: 900px;
-            height: 875px;
-            text-align: center;
-            padding-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
 
             img {
-                width: 678px;
-                height: 850px;
+                width: 100%;
+                height: auto;
+                max-width: 700px;
+                object-fit: cover;
+                border-radius: 8px;
             }
         }
 
         .content4 {
-            width: 52%;
-            padding-top: 1rem;
+            flex: 1 1 500px;
+            min-width: 300px;
             color: var(--azul);
+            padding: 1rem 2rem;
 
             h3 {
-                margin-top: 2.5rem;
-                padding: 4rem 0rem 2rem 5rem;
-                font-size: 36px;
+                margin-top: 2rem;
+                padding: 3rem 3rem 1.5rem 3rem;
+                font-size: clamp(1.5rem, 3vw, 2.25rem);
                 font-style: italic;
                 font-weight: 400;
             }
 
             p {
-                padding: 1rem 11rem 0rem 5rem;
+                padding: 1rem 3rem;
                 margin-bottom: 1rem;
-                font-size: 24px;
+                font-size: clamp(1rem, 2vw, 1.5rem);
             }
         }
     }
@@ -392,19 +270,18 @@ header {
     width: 100%;
 
     .albumTitle {
-        height: 380px;
+        padding: 3rem;
         background-color: #00010a;
 
         h2 {
-            padding: 3rem;
-            font-size: 64px;
-
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
         }
 
         h3 {
             padding-top: 2rem;
             text-align: center;
-            font-size: 56px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
         }
     }
 
@@ -414,32 +291,42 @@ header {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center top;
-        padding: 6rem;
+        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .imgalbum {
             text-align: center;
-            margin-bottom: 9rem;
+            margin-bottom: 4rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
 
             img {
-
-                width: 1035px;
-                height: 1035px;
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                aspect-ratio: 1/1;
                 border-radius: 10px;
-
+                object-fit: cover;
             }
         }
 
         .canciones {
+            width: 100%;
+            max-width: 900px;
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2rem;
             align-items: center;
 
             iframe {
+                width: 100%;
                 box-shadow:
                     0 4px 20px rgba(255, 255, 255, 0.05),
                     0 8px 30px rgba(255, 255, 255, 0.1);
-                transition: transform 0.3s ease, box-shadow 0.3s ease
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
 
             iframe:hover {
@@ -453,54 +340,48 @@ header {
     .moreAlbum {
         width: 100%;
         background-color: var(--white);
-        padding: 5rem;
+        padding: 4rem 2rem;
         color: var(--azul);
 
         h3 {
             text-align: center;
-            font-size: 56px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
         }
 
         .album2 {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2rem;
             align-items: center;
             justify-content: center;
 
-            .fila1 {
-                margin-top: 2rem;
-                width: 100%;
-                display: flex;
-                gap: 3rem;
-                justify-content: center;
-
-                .imgalbum {
-                    border: 2px solid white;
-                    flex: 1;
-                    text-align: center;
-                    margin: 1rem;
-
-                    h4 {
-                        margin: 1rem;
-                    }
-                }
-            }
-
+            .fila1,
             .fila2 {
                 width: 100%;
+                max-width: 1200px;
                 display: flex;
-                gap: 3rem;
+                flex-wrap: wrap;
+                gap: 2rem;
                 justify-content: center;
 
                 .imgalbum {
-                    border: 2px solid white;
-                    flex: 1;
+                    flex: 1 1 calc(50% - 1rem);
+                    min-width: 280px;
+                    max-width: 500px;
                     text-align: center;
-                    margin: 1rem;
+                    padding: 1rem;
+                    border: 2px solid var(--azul);
+                    border-radius: 8px;
 
                     h4 {
-                        margin: 1rem;
+                        margin-bottom: 1rem;
+                        font-size: clamp(1rem, 2.5vw, 1.5rem);
+                    }
+
+                    iframe {
+                        width: 100% ;
+                        
                     }
                 }
             }
@@ -874,3 +755,476 @@ header {
     }
 }
 
+
+
+@media (max-width: 1024px) {
+    header {
+        padding: 1rem;
+
+        nav {
+            ul {
+                gap: 1.5rem;
+
+                li {
+                    a {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+        flex-direction: column;
+        .morad {
+            padding: 1.5rem;
+        }
+
+        .photo {
+            padding: 0rem;
+            height: 50vh;
+        }
+        .icons {
+            
+            flex-direction: row;
+        }
+    }
+
+
+    .bio-content {
+        padding: 3rem 2rem;
+
+        .bio1 {
+            flex-direction: column;
+            gap: 2rem;
+
+            .content1 {
+                width: 100%;
+                padding: 1rem;
+
+                h2 {
+                    padding-left: 2rem;
+                    font-size: clamp(2rem, 5vw, 3rem);
+                }
+
+                h3 {
+                    padding: 2rem;
+                    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+                }
+
+                p {
+                    padding: 1rem 2rem;
+                    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+                }
+            }
+
+            .content2 {
+                width: 100%;
+                padding: 0;
+
+                img {
+                    max-width: 600px;
+                }
+            }
+        }
+
+        .bio2 {
+            margin-top: 4rem;
+            flex-direction: column-reverse;
+            gap: 2rem;
+
+            .content3 {
+                width: 100%;
+                padding: 0;
+
+                img {
+                    max-width: 600px;
+                }
+            }
+
+            .content4 {
+                width: 100%;
+                padding: 1rem;
+
+                h3 {
+                    margin-top: 1rem;
+                    padding: 2rem;
+                    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+                }
+
+                p {
+                    padding: 1rem 2rem;
+                    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+                }
+            }
+        }
+    }
+
+
+    .album {
+        .albumTitle {
+            height: auto;
+            padding: 3rem 2rem;
+        }
+
+        .album-content {
+            padding: 3rem 2rem;
+
+            .imgalbum {
+                margin-bottom: 4rem;
+
+                img {
+                    max-width: 600px;
+                }
+            }
+
+            .canciones {
+                gap: 2rem;
+
+                iframe {
+                    width: 90% ;
+                }
+            }
+        }
+
+        .moreAlbum {
+            padding: 3rem 2rem;
+
+            .album2 {
+                gap: 2rem;
+
+                .fila1,
+                .fila2 {
+                    flex-direction: column;
+                    gap: 2rem;
+
+                    .imgalbum {
+                        max-width: 100%;
+
+                        iframe {
+                            width: 90% !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        .hamburger {
+            display: flex;
+        }
+
+        nav {
+            display: none;
+        }
+
+
+    }
+
+    .hero-content {
+        flex-direction: column;
+        padding: 1rem;
+        min-height: auto;
+
+        .morad {
+            order: 1;
+            padding: 1rem;
+            width: 100%;
+
+            h1 {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+            }
+
+            p {
+                font-size: clamp(0.9rem, 3vw, 1.2rem);
+            }
+        }
+
+        .photo {
+            order: 2;
+            padding: 1rem;
+            width: 100%;
+
+            img {
+                max-height: 50vh;
+            }
+        }
+
+        .icons {
+            order: 3;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+
+            svg {
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+
+
+    .bio-content {
+        padding: 2rem 1rem;
+
+        .bio1 {
+            flex-direction: column;
+            gap: 2rem;
+
+            .content1 {
+                h2 {
+                    padding-left: 1rem;
+                    font-size: clamp(2rem, 8vw, 2.5rem);
+                }
+
+                h3 {
+                    padding: 1.5rem 1rem 1rem 1rem;
+                    font-size: clamp(1.2rem, 4vw, 1.5rem);
+                }
+
+                p {
+                    padding: 0.8rem 1rem;
+                    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .content2 {
+                img {
+                    max-width: 500px;
+                }
+            }
+        }
+
+        .bio2 {
+            margin-top: 2rem;
+            gap: 2rem;
+
+            .content3 {
+                img {
+                    max-width: 500px;
+                }
+            }
+
+            .content4 {
+                h3 {
+                    margin-top: 0.5rem;
+                    padding: 1.5rem 1rem 1rem 1rem;
+                    font-size: clamp(1.2rem, 4vw, 1.5rem);
+                }
+
+                p {
+                    padding: 0.8rem 1rem;
+                    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+
+
+    .album {
+        .albumTitle {
+            padding: 2rem 1rem;
+        }
+
+        .album-content {
+            padding: 2rem 1rem;
+
+            .imgalbum {
+                margin-bottom: 3rem;
+
+                img {
+                    max-width: 450px;
+                }
+            }
+
+            .canciones {
+                gap: 1.5rem;
+
+                iframe {
+                    width: 100% ;
+                    
+                }
+            }
+        }
+
+        .moreAlbum {
+            padding: 2rem 1rem;
+
+            h3 {
+                margin-bottom: 1rem;
+            }
+
+            .album2 {
+                gap: 1.5rem;
+
+                .fila1,
+                .fila2 {
+                    margin-top: 0;
+                    gap: 1.5rem;
+
+                    .imgalbum {
+                        iframe {
+                            width: 95% ;
+                            ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 70px;
+
+        .hamburger {
+            left: 1rem;
+        }
+
+        nav {
+            top: 70px;
+            height: calc(100vh - 70px);
+        }
+    }
+
+    .hero-content {
+        min-height: calc(100vh - 70px);
+
+        .morad {
+            h1 {
+                font-size: clamp(2rem, 15vw, 3rem);
+            }
+
+            p {
+                font-size: clamp(0.8rem, 4vw, 1rem);
+            }
+        }
+
+        .photo {
+            img {
+                max-height: 40vh;
+            }
+        }
+
+        .icons {
+            svg {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+
+    .bio-content {
+        padding: 1.5rem 0.8rem;
+
+        .bio1 {
+            gap: 1.5rem;
+
+            .content1 {
+                h2 {
+                    padding-left: 0.5rem;
+                    font-size: clamp(1.8rem, 10vw, 2.2rem);
+                }
+
+                h3 {
+                    padding: 1rem 0.5rem;
+                    font-size: clamp(1.1rem, 5vw, 1.3rem);
+                }
+
+                p {
+                    padding: 0.6rem 0.5rem;
+                    font-size: clamp(0.85rem, 4vw, 1rem);
+                }
+            }
+
+            .content2 {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .bio2 {
+            margin-top: 1.5rem;
+            gap: 1.5rem;
+
+            .content3 {
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .content4 {
+                h3 {
+                    padding: 1rem 0.5rem;
+                    font-size: clamp(1.1rem, 5vw, 1.3rem);
+                }
+
+                p {
+                    padding: 0.6rem 0.5rem;
+                    font-size: clamp(0.85rem, 4vw, 1rem);
+                }
+            }
+        }
+    }
+
+
+    .album {
+        .albumTitle {
+            padding: 1.5rem 0.8rem;
+        }
+
+        .album-content {
+            padding: 1.5rem 0.8rem;
+
+            .imgalbum {
+                margin-bottom: 2rem;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .canciones {
+                gap: 1rem;
+
+                iframe {
+                    height: 100px ;
+                }
+            }
+        }
+
+        .moreAlbum {
+            padding: 1.5rem 0.8rem;
+
+            .album2 {
+                gap: 1rem;
+
+                .fila1,
+                .fila2 {
+                    gap: 1rem;
+
+                    .imgalbum {
+                        h4 {
+                            margin: 0.5rem;
+                        }
+
+                        iframe {
+                            width: 98% ;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
