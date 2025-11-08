@@ -96,74 +96,196 @@ header {
     }
 }
 
-
+/* HERO ---------------------------------------------------------------------- */
 .hero-content {
-    height: calc(100vh - 80px);
-    background-color: var(--azul);
+    min-height: calc(100vh - 80px);
+    background: var(--azul);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
 
-    .morad {
-        width: 50%;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: transparent;
+    }
+
+    .hero-wrapper {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex: 1;
         align-items: center;
-        text-align: center;
-        padding: 0rem;
-        min-width: 300px;
+        justify-content: space-between;
+        padding: 4rem 5%;
+        gap: 4rem;
+        position: relative;
+        z-index: 1;
 
-        h1 {
-            font-family: 'Monoton', cursive;
-            font-weight: 100;
-            font-size: clamp(2rem, 6vw, 5rem);
-            margin-bottom: 0rem;
+        .hero-left {
+            display: flex;
+            flex: 1;
+            max-width: 600px;
+
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                .hero-subtitle {
+                    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+                    letter-spacing: 0.3em;
+                    font-weight: 700;
+                    color: rgba(255, 255, 255, 0.6);
+                    text-transform: uppercase;
+                }
+
+                .hero-title {
+                    font-family: 'Monoton', cursive;
+                    font-size: clamp(3.5rem, 8vw, 7rem);
+                    font-weight: 100;
+                    line-height: 0.9;
+                    margin: 0;
+
+                }
+
+                .hero-description {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    .tagline {
+                        font-size: clamp(1.125rem, 2vw, 1.5rem);
+                        font-weight: 300;
+                        color: var(--white);
+                        line-height: 1.4;
+                    }
+                }
+
+                .hero-stats {
+                    display: flex;
+                    gap: 3rem;
+                    margin-top: 1rem;
+
+                    .stat-item {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.25rem;
+
+                        .stat-number {
+                            font-size: clamp(1.75rem, 3vw, 2.5rem);
+                            font-weight: 700;
+                            color: #ffffff;
+                        }
+
+                        .stat-label {
+                            font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+                            font-weight: 400;
+                            color: #E0E0E0;
+                            text-transform: uppercase;
+                            letter-spacing: 0.1em;
+                        }
+                    }
+                }
+            }
         }
 
-        p {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            font-weight: 350;
-            margin: 0.5rem 0;
+        .hero-right {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            max-width: 650px;
+
+            .image-container {
+                display: flex;
+
+                width: 100%;
+                height: 600px;
+                border-radius: 20px;
+
+                .hero-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.5s ease;
+                }
+
+                &:hover .hero-image {
+                    transform: scale(1.1);
+                }
+
+                .image-accent {
+                    position: absolute;
+                    top: -50%;
+                    right: -50%;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+
+                }
+            }
         }
     }
 
-    .photo {
-        width: 47%;
+    .hero-social {
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        min-width: 300px;
+        padding: 2rem 5%;
+        position: relative;
+        z-index: 1;
 
-        img {
-            max-width: 150%;
-            height: auto;
-            height: 120vh;
-            object-fit: contain;
-        }
-    }
+        .social-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
 
-    .icons {
-        width: 3%;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-        justify-content: center;
-        align-items: center;
+            .social-label {
+                font-size: 0.875rem;
+                font-weight: 600;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.6);
+            }
 
-        svg {
-            height: 40px;
-            width: 40px;
-            cursor: pointer;
+            .icons {
+                display: flex;
+                gap: 1.5rem;
 
+                .social-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 45px;
+                    height: 45px;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 50%;
+                    transition: all 0.3s ease;
+                    backdrop-filter: blur(10px);
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.15);
+                        border-color: rgba(255, 255, 255, 0.3);
+                        transform: translateY(-3px);
+                    }
+                }
+            }
         }
     }
 }
 
+/* BIO --------------------------------------------------------------------------------*/
 .bio-content {
     padding-top: 3rem;
     padding-bottom: 5rem;
@@ -267,12 +389,16 @@ header {
     }
 }
 
+/* ALBUM --------------------------------------------------------------------------------*/
 .album {
     width: 100%;
+    padding: 3rem 2rem;
+    color: var(--azul);
+    background-color: #e0e0e0;
 
     .albumTitle {
         padding: 3rem;
-        background-color: #00010a;
+        background-color: transparent;
 
         h2 {
             padding-left: 2rem;
@@ -280,67 +406,69 @@ header {
         }
     }
 
-    h3 {
-        padding-top: 2rem;
-        text-align: center;
-        font-size: clamp(2rem, 5vw, 3.5rem);
-    }
-}
 
-.album-content {
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-    padding: 4rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .imgalbum {
-        text-align: center;
-        margin-bottom: 4rem;
+    .album-content {
         width: 100%;
-        display: flex;
-        justify-content: center;
-
-        img {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-
-            border-radius: 10px;
-            object-fit: cover;
-        }
-    }
-
-    .canciones {
-        width: 100%;
-        max-width: 900px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        padding: 4rem 2rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
         align-items: center;
 
-        iframe {
-            width: 100%;
-            box-shadow:
-                0 4px 20px rgba(255, 255, 255, 0.05),
-                0 8px 30px rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        h3 {
+            padding-top: 1rem;
+            padding-bottom: 4rem;
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem);
         }
 
-        iframe:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.12),
-                0 15px 50px rgba(255, 255, 255, 0.15);
+        .imgalbum {
+            text-align: center;
+            margin-bottom: 4rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+
+        .canciones {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+
+            iframe {
+                width: 100%;
+                box-shadow:
+                    0 4px 20px rgba(255, 255, 255, 0.05),
+                    0 8px 30px rgba(255, 255, 255, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            iframe:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 40px rgba(255, 255, 255, 0.12),
+                    0 15px 50px rgba(255, 255, 255, 0.15);
+            }
         }
     }
 }
 
 .moreAlbum {
     width: 100%;
-    background-color: var(--white);
+    background-color: transparent;
     padding: 4rem 2rem;
     color: var(--azul);
 
@@ -387,7 +515,7 @@ header {
     }
 }
 
-
+/* TOUR --------------------------------------------------------------------------------*/
 .tour {
     width: 100%;
     background-color: #04040f;
@@ -411,7 +539,9 @@ header {
 
             h2 {
                 font-size: clamp(2.5rem, 5vw, 4rem);
-                margin-bottom: 7rem;
+                margin-top: 3rem;
+                margin-bottom: 4rem;
+                padding-left: 3rem;
             }
 
             .sect1,
@@ -423,8 +553,9 @@ header {
                 overflow: hidden;
                 display: flex;
                 gap: 4rem;
-                margin: 2rem 1rem;
+                margin: 1rem 3rem;
                 padding: 1rem;
+
                 border: 2px solid var(--white);
                 border-radius: 15px;
                 z-index: 1;
@@ -444,6 +575,10 @@ header {
                     }
 
                 }
+            }
+
+            .sect5 {
+                margin-bottom: 3rem;
             }
 
             .sect1::before,
@@ -510,9 +645,46 @@ header {
 
 }
 
+/* MAPA --------------------------------------------------------------------------------*/
+.map-section {
+    width: 100%;
+    background-color: #04040f;
+    color: var(--white);
+    padding: 5rem 2rem;
+
+    .map-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin: 3rem;
+            margin-bottom: 4rem;
+        }
+
+
+
+        .map-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+
+/* MERCHAN --------------------------------------------------------------------------------*/
 .merchan {
     width: 100%;
-    background-color: var(--white);
+    background-color: #f0f0f0;
     padding: 5rem;
     color: var(--azul);
 
@@ -595,6 +767,7 @@ header {
     }
 }
 
+/* VIDEO --------------------------------------------------------------------------------*/
 .video {
     width: 100%;
     background-color: #04040f;
@@ -611,6 +784,7 @@ header {
     }
 }
 
+/* CONTACTO --------------------------------------------------------------------------------*/
 .contact {
     width: 100%;
     background-color: var(--white);
@@ -716,11 +890,12 @@ header {
     }
 
     .contact-right {
+        margin-left: 3rem;
         width: 50%;
         display: flex;
         flex-direction: column;
         gap: 50px;
-        align-items: center;
+        align-items: start;
 
         .collaborations,
         .platforms {
@@ -749,6 +924,21 @@ header {
                 gap: 15px;
                 text-align: center;
 
+                .icono1,
+                .icono2,
+                .icono3 {
+                    svg {
+                        width: 50px;
+                        height: 50px;
+                        padding: 5px;
+                        background-color: var(--azul);
+                        border-radius: 50%;
+                        flex-shrink: 0;
+                        text-align: center;
+
+                    }
+                }
+
                 svg {
                     width: 50px;
                     height: 50px;
@@ -772,6 +962,7 @@ header {
     }
 }
 
+/* Footer -----------------------------------------------------------------*/
 footer {
     background-color: #080819;
     color: white;
@@ -785,7 +976,7 @@ footer {
         .footer-container {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             width: 100%;
             gap: 60px;
         }
@@ -795,6 +986,7 @@ footer {
         flex: 2;
         min-width: 200px;
         text-align: center;
+        justify-content: center;
 
         h1 {
             font-family: 'Monoton', cursive;
@@ -826,6 +1018,49 @@ footer {
             span {
                 white-space: nowrap;
             }
+
+            .footer-social {
+                display: flex;
+                justify-content: center;
+                padding: 0,7rem 5%;
+                position: relative;
+                z-index: 1;
+
+                .footer-wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+
+                    .icons {
+                        display: flex;
+                        gap: 1.5rem;
+
+                        .footer-icon {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 45px;
+                            height: 45px;
+                            background: rgba(255, 255, 255, 0.05);
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            border-radius: 50%;
+                            transition: all 0.3s ease;
+                            backdrop-filter: blur(10px);
+
+                            svg {
+                                width: 24px;
+                                height: 24px;
+                            }
+
+                            &:hover {
+                                background: rgba(255, 255, 255, 0.15);
+                                border-color: rgba(255, 255, 255, 0.3);
+                                transform: translateY(-3px);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -856,22 +1091,7 @@ footer {
             }
         }
 
-        .icons {
-            margin-right: 3rem;
-            width: 3%;
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            justify-content: center;
-            align-items: center;
 
-            svg {
-                height: 40px;
-                width: 40px;
-                cursor: pointer;
-
-            }
-        }
     }
 
     .footer-bottom {
@@ -902,18 +1122,15 @@ footer {
 
 @media (max-width: 1700px) {
 
-    /* TOUR */
     .tour {
         .tour-content {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            /* foto pegada abajo */
             gap: 3rem;
 
             .cards {
                 flex: 1;
-                /* siempre ocupa 50% */
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -921,7 +1138,6 @@ footer {
 
             .photo2 {
                 flex: 1;
-                /* siempre ocupa 50% */
                 display: flex;
                 justify-content: center;
                 align-items: flex-end;
@@ -929,7 +1145,6 @@ footer {
                 img {
                     width: 100%;
                     max-width: 600px;
-                    /* se achica proporcionalmente */
                     height: auto;
                     object-fit: contain;
                 }
@@ -955,26 +1170,35 @@ footer {
         }
     }
 
-    .hero-content {
-        padding: 1.5rem;
-        flex-direction: column;
+    /*HERO--------------------------------------------------------------------------------------*/
+    .hero-wrapper {
+        padding: 3rem 4%;
+        gap: 3rem;
 
-        .morad {
-            padding: 1.5rem;
+        .hero-left {
+            max-width: 500px;
+
+            .hero-text {
+                .hero-stats {
+                    gap: 2rem;
+                }
+            }
         }
 
-        .photo {
-            padding: 0rem;
-            height: 50vh;
-        }
-
-        .icons {
-
-            flex-direction: row;
+        .hero-right {
+            .image-container {
+                height: 500px;
+            }
         }
     }
 
+    .hero-social {
+        .social-wrapper {
+            gap: 1.5rem;
+        }
+    }
 
+    /* BIO--------------------------------------------------------------------------------------*/
     .bio-content {
         padding: 3rem 2rem;
 
@@ -1044,7 +1268,7 @@ footer {
         }
     }
 
-
+    /* ALBUM --------------------------------------------------------------------------------*/
     .album {
         .albumTitle {
             height: auto;
@@ -1095,6 +1319,7 @@ footer {
         }
     }
 
+    /* TOUR --------------------------------------------------------------------------------*/
     .tour {
         .tour-content {
             flex-direction: column;
@@ -1103,11 +1328,14 @@ footer {
 
             .cards {
 
+
                 width: 100%;
                 padding: 2rem 1rem 0 1rem;
 
                 h2 {
                     text-align: center;
+                    padding-left: 0;
+                    margin-left: 0;
                 }
 
                 .sect1,
@@ -1116,7 +1344,7 @@ footer {
                 .sect4,
                 .sect5 {
                     gap: 2rem;
-                    margin: 1rem 0;
+                    margin: 1rem 3rem;
                     padding: 1rem;
                 }
             }
@@ -1136,9 +1364,33 @@ footer {
         }
     }
 
+    /* MAPA --------------------------------------------------------------------------------*/
+    .map-section {
+        padding: 4rem 1.5rem;
+
+        .map-container {
+            h2 {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+
+            p {
+                font-size: clamp(1rem, 2.5vw, 1.4rem);
+            }
+
+            .map-image {
+                img {
+                    max-width: 600px;
+                }
+            }
+        }
+    }
+
+    /* MERCHAN --------------------------------------------------------------------------------*/
     .merchan {
         h2 {
             text-align: center;
+            padding-left: 0;
+            margin-left: 0
         }
 
         .mercha-content {
@@ -1168,6 +1420,7 @@ footer {
         }
     }
 
+    /* VIDEO --------------------------------------------------------------------------------*/
     .video {
         padding: 3rem 2rem;
 
@@ -1176,6 +1429,7 @@ footer {
         }
     }
 
+    /* CONTACT --------------------------------------------------------------------------------*/
     .contact {
         .contact-content {
             flex-direction: column;
@@ -1190,10 +1444,18 @@ footer {
 
         .contact-right {
             width: 100%;
+            margin-left: 0;
+            align-items: center;
+
+            .contact-info,
+            .platform-links {
+                align-items: center;
+                text-align: center;
+            }
         }
     }
 
-
+    /* FOOTER --------------------------------------------------------------------------------*/
     footer {
         .footer-main {
             .footer-container {
@@ -1223,7 +1485,6 @@ footer {
 
             .icons {
                 margin-right: 0;
-                /* para centrar del todo */
                 width: auto;
             }
         }
@@ -1233,7 +1494,6 @@ footer {
                 justify-content: center;
                 align-items: center;
                 gap: 12px;
-                /* separaciones uniformes */
             }
         }
     }
@@ -1252,51 +1512,53 @@ footer {
 
     }
 
-    .hero-content {
+    /* HERO --------------------------------------------------------------------------------------*/
+    .hero-wrapper {
         flex-direction: column;
-        padding: 1rem;
-        min-height: auto;
+        padding: 3rem 5%;
+        gap: 3rem;
 
-        .morad {
-            order: 1;
-            padding: 1rem;
-            width: 100%;
+        .hero-left {
+            max-width: 100%;
+            text-align: center;
+            align-items: center;
 
-            h1 {
-                font-size: clamp(2.5rem, 12vw, 4rem);
-            }
+            .hero-text {
+                align-items: center;
 
-            p {
-                font-size: clamp(0.9rem, 3vw, 1.2rem);
-            }
-        }
+                .hero-description {
+                    align-items: center;
+                }
 
-        .photo {
-            order: 2;
-            padding: 1rem;
-            width: 100%;
-
-            img {
-                max-height: 50vh;
+                .hero-stats {
+                    justify-content: center;
+                    gap: 2.5rem;
+                }
             }
         }
 
-        .icons {
-            order: 3;
-            flex-direction: row;
+        .hero-right {
+            max-width: 100%;
             width: 100%;
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 1.5rem;
 
-            svg {
-                height: 35px;
-                width: 35px;
+            .image-container {
+                height: 500px;
+                max-width: 500px;
+                margin: 0 auto;
             }
         }
     }
 
+    .hero-social {
+        padding: 2rem 5%;
 
+        .social-wrapper {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    }
+
+    /* BIO --------------------------------------------------------------------------------------*/
     .bio-content {
         padding: 2rem 1rem;
 
@@ -1355,7 +1617,7 @@ footer {
         }
     }
 
-
+    /* ALBUM --------------------------------------------------------------------------------*/
     .album {
         .albumTitle {
             padding: 2rem 1rem;
@@ -1408,6 +1670,7 @@ footer {
         }
     }
 
+    /* TOUR --------------------------------------------------------------------------------*/
     .tour {
         .tour-content {
             flex-direction: column;
@@ -1416,10 +1679,15 @@ footer {
 
             .cards {
 
+                h2 {
+                    text-align: center;
+                    padding-left: 0;
+                    margin-left: 0;
+                }
+
                 width: 100%;
                 padding: 2rem 1rem 0 1rem;
 
-                /* mantener las tarjetas con el mismo layout interno */
                 .sect1,
                 .sect2,
                 .sect3,
@@ -1439,13 +1707,34 @@ footer {
 
                 img {
                     width: min(1058px, 100%);
-                    /* grande, sin perder protagonismo */
                     height: auto;
                 }
             }
         }
     }
 
+    /* MAPA --------------------------------------------------------------------------------*/
+    .map-section {
+        padding: 3rem 1rem;
+
+        .map-container {
+            h2 {
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+            }
+
+            p {
+                font-size: clamp(0.95rem, 3vw, 1.2rem);
+            }
+
+            .map-image {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    /* MERCHAN --------------------------------------------------------------------------------*/
     .merchan {
         h2 {
             text-align: center;
@@ -1472,6 +1761,7 @@ footer {
         }
     }
 
+    /* VIDEO --------------------------------------------------------------------------------*/
     .video {
         padding: 2rem 1rem;
 
@@ -1480,6 +1770,7 @@ footer {
         }
     }
 
+    /* CONTACTO --------------------------------------------------------------------------------*/
     .contact {
         padding: 3rem 1.5rem;
 
@@ -1498,6 +1789,7 @@ footer {
         }
     }
 
+    /* FOOTER --------------------------------------------------------------------------------*/
     .footer-main {
         padding: 40px 30px;
 
@@ -1578,33 +1870,62 @@ footer {
         }
     }
 
-    .hero-content {
-        min-height: calc(100vh - 70px);
+    /* HERO --------------------------------------------------------------------------------------*/
+    .hero-wrapper {
+        padding: 2rem 5%;
+        gap: 2rem;
 
-        .morad {
-            h1 {
-                font-size: clamp(2rem, 15vw, 3rem);
-            }
+        .hero-left {
+            .hero-text {
+                gap: 1.5rem;
 
-            p {
-                font-size: clamp(0.8rem, 4vw, 1rem);
+                .hero-subtitle {
+                    letter-spacing: 0.2em;
+                }
+
+                .hero-stats {
+                    gap: 1.5rem;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    .stat-item {
+                        min-width: 80px;
+                    }
+                }
             }
         }
 
-        .photo {
-            img {
-                max-height: 40vh;
-            }
-        }
-
-        .icons {
-            svg {
-                height: 30px;
-                width: 30px;
+        .hero-right {
+            .image-container {
+                height: 400px;
+                border-radius: 15px;
             }
         }
     }
 
+    .hero-social {
+        padding: 1.5rem 5%;
+
+        .social-wrapper {
+            gap: 1rem;
+
+            .icons {
+                gap: 1rem;
+
+                .social-icon {
+                    width: 40px;
+                    height: 40px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* BIO --------------------------------------------------------------------------------------*/
     .bio-content {
         padding: 1.5rem 0.8rem;
 
@@ -1659,7 +1980,7 @@ footer {
         }
     }
 
-
+    /* ALBUM --------------------------------------------------------------------------------*/
     .album {
         .albumTitle {
             padding: 1.5rem 0.8rem;
@@ -1710,8 +2031,16 @@ footer {
         }
     }
 
+    /* TOUR --------------------------------------------------------------------------------*/
     .tour {
+
+
         .cards {
+            h2 {
+                text-align: center;
+                padding-left: 0;
+                margin-left: 0;
+            }
 
             .sect1,
             .sect2,
@@ -1724,6 +2053,7 @@ footer {
                 justify-content: space-between;
                 align-items: center;
                 border-radius: 12px;
+                padding-top: 2rem;
 
                 .text {
                     flex: 1;
@@ -1732,12 +2062,13 @@ footer {
                 .bton {
                     flex: 1;
                     text-align: right;
-                    
+
                 }
             }
         }
     }
 
+    /* MERCHAN --------------------------------------------------------------------------------*/
     .merchan {
         h2 {
             text-align: center;
@@ -1786,6 +2117,7 @@ footer {
         }
     }
 
+    /* VIDEO --------------------------------------------------------------------------------*/
     .video {
         padding: 1.5rem 1rem;
 
@@ -1794,6 +2126,7 @@ footer {
         }
     }
 
+    /* CONTACTO --------------------------------------------------------------------------------*/
     .contact {
         padding: 2rem 1rem;
 
